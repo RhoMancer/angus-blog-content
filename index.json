@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello World",
+    "date": "2025-01-01T12:00:00Z",
+    "excerpt": "Kicking off the app blog with our first post.",
+    "coverImageUrl": null,
+    "tags": ["intro"]
+  }
+]

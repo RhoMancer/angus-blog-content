@@ -1,0 +1,50 @@
+name: Build RSS
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "index.json"
+      - "posts/**"
+      - "scripts/generate-rss.mjs"
+      - "package.json"
+      - "package-lock.json"
+
+permissions:
+  contents: write
+
+jobs:
+  build-rss:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build rss.xml
+        env:
+          FEED_TITLE: "<FEED_TITLE>"
+          FEED_DESC: "Updates and articles from <FEED_TITLE>"
+          SITE_BASE_URL: "https://<GITHUB_USERNAME>.github.io/<REPO_NAME>"
+          RSS_OUTPUT: "docs/rss.xml"
+        run: npm run build:rss
+
+      - name: Commit feed
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "<CI_BOT_NAME>"
+            git config user.email "<CI_BOT_EMAIL>"
+            git add docs/rss.xml
+            git commit -m "chore(feed): update rss.xml"
+            git push
+          fi

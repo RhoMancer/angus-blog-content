@@ -1,0 +1,11 @@
+{
+  "name": "blog-content",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "markdown-it": "^14.1.0"
+  },
+  "scripts": {
+    "build:rss": "node scripts/generate-rss.mjs"
+  }
+}

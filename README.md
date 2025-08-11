@@ -22,13 +22,13 @@ Markdown-based content and RSS feed for the app blog.
      "tags": ["tag1", "tag2"]
    }
    ```
-3. Commit and push to `main`.
+3. Commit and push to `master`.
 4. GitHub Actions updates `docs/rss.xml` automatically.
 
 ## URLs
 
 - Raw content base (for the app):
-  - `https://raw.githubusercontent.com/<GITHUB_USERNAME>/<REPO_NAME>/main`
+  - `https://raw.githubusercontent.com/<GITHUB_USERNAME>/<REPO_NAME>/master`
   - Example: `<base>/index.json`, `<base>/posts/<slug>.md`
 - RSS feed (for readers and the app):
   - `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/rss.xml`
@@ -37,4 +37,4 @@ Markdown-based content and RSS feed for the app blog.
 
 - Dates should be ISO 8601 (UTC recommended).
 - Tags in `index.json` become `<category>` entries in the RSS feed.
-- If you enable GitHub Pages for this repo (Settings → Pages → Source: Deploy from a branch → Branch: main → Folder: /docs), the feed is served at `/rss.xml`.
+- If you enable GitHub Pages for this repo (Settings → Pages → Source: Deploy from a branch → Branch: master → Folder: /docs), the feed is served at `/rss.xml`.

@@ -8,7 +8,7 @@ const md = new MarkdownIt({ html: false, linkify: true, typographer: true });
 // Configure via env or defaults
 const FEED_TITLE = process.env.FEED_TITLE ?? "<FEED_TITLE>";
 // SITE_BASE_URL is the public base where your feed and (optionally) HTML pages live.
-// For GitHub Pages from /docs on main: https://<GITHUB_USERNAME>.github.io/<REPO_NAME>
+// For GitHub Pages from /docs on master: https://<GITHUB_USERNAME>.github.io/<REPO_NAME>
 const SITE_BASE_URL = (process.env.SITE_BASE_URL ?? "https://<GITHUB_USERNAME>.github.io/<REPO_NAME>").replace(/\/$/, "");
 const RSS_OUTPUT = process.env.RSS_OUTPUT ?? "docs/rss.xml";
 const CHANNEL_DESC = process.env.FEED_DESC ?? "Updates and articles from <FEED_TITLE>";
@@ -26,7 +26,7 @@ function esc(s) {
     .replaceAll('"', "&quot;");
 }
 
-async function main() {
+async function master() {
   const indexPath = path.join(ROOT, "index.json");
   const postsDir = path.join(ROOT, "posts");
   const indexRaw = await fs.readFile(indexPath, "utf8");
@@ -86,7 +86,7 @@ async function main() {
   console.log(`Wrote ${RSS_OUTPUT}`);
 }
 
-main().catch((e) => {
+master().catch((e) => {
   console.error(e);
   process.exit(1);
 });

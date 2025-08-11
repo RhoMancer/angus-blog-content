@@ -2,7 +2,7 @@ name: Build RSS
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
     paths:
       - "index.json"
       - "posts/**"

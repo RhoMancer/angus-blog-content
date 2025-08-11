@@ -33,10 +33,10 @@ jobs:
 
       - name: Build rss.xml
         env:
-          FEED_TITLE: "<FEED_TITLE>"
-          FEED_DESC: "Updates and articles from <FEED_TITLE>"
-          SITE_BASE_URL: "https://<GITHUB_USERNAME>.github.io/<REPO_NAME>"
-          RSS_OUTPUT: "docs/rss.xml"
+          FEED_TITLE: "${{ vars.FEED_TITLE }}"
+          FEED_DESC: "${{ vars.FEED_DESC }}"
+          SITE_BASE_URL: "${{ vars.SITE_BASE_URL }}"
+          RSS_OUTPUT: "${{ vars.RSS_OUTPUT }}"
         run: npm run build:rss
 
       - name: Commit feed

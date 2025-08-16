@@ -1,10 +1,10 @@
 [
   {
-    "slug": "hello-world",
-    "title": "Hello World",
-    "date": "2025-01-01T12:00:00Z",
-    "excerpt": "Kicking off the app blog with our first post.",
+    "slug": "lost-music",
+    "title": "How I found and lost a love for music",
+    "date": "2025-08-10T18:46:00Z",
+    "excerpt": "I played the drums and guitar when I was younger. For me, it's been years since I played both.",
     "coverImageUrl": null,
-    "tags": ["intro"]
+    "tags": ["intro", "music", "depression"]
   }
 ]

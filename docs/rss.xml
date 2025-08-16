@@ -4,19 +4,16 @@
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rhoman₵er's (Row-Man-Sir) Blog Feed</title>
-    <link>https://rhomancer.github.io/angus-blog-content
-</link>
+    <link>https://rhomancer.github.io/angus-blog-content</link>
     <description>It's worth what you paid for it, in taxes or otherwise</description>
-    <atom:link href="https://rhomancer.github.io/angus-blog-content
-/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://rhomancer.github.io/angus-blog-content/rss.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>Wed, 01 Jan 2025 12:00:00 GMT</lastBuildDate>
-    <item><title>Hello World</title><link>https://rhomancer.github.io/angus-blog-content
-/hello-world</link><guid isPermaLink="false">hello-world</guid><pubDate>Wed, 01 Jan 2025 12:00:00 GMT</pubDate><description><![CDATA[Kicking off the app blog with our first post.]]></description><category>intro</category><content:encoded><![CDATA[<h1>Hello World</h1>
+    <item><title>Hello World</title><link>https://rhomancer.github.io/angus-blog-content/hello-world</link><guid isPermaLink="false">hello-world</guid><pubDate>Wed, 01 Jan 2025 12:00:00 GMT</pubDate><description><![CDATA[Kicking off the app blog with our first post.]]></description><category>intro</category><content:encoded><![CDATA[<h1>Hello World</h1>
 <p>Welcome to the app blog!</p>
 <ul>
 <li>New posts appear without app updates</li>
 <li>Subscribe via RSS at /rss.xml</li>
-<li>Updates 2!</li>
+<li>Updates 3!</li>
 </ul>
 ]]></content:encoded></item>
   </channel>

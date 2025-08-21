@@ -39,12 +39,12 @@ jobs:
           RSS_OUTPUT: "${{ vars.RSS_OUTPUT }}"
         run: npm run build:rss
 
-      - name: Commit feed
+      - name: Commit site
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "<CI_BOT_NAME>"
             git config user.email "<CI_BOT_EMAIL>"
-            git add docs/rss.xml
-            git commit -m "chore(feed): update rss.xml"
+            git add docs/**
+            git commit -m "chore(site): update generated pages and rss.xml"
             git push
           fi

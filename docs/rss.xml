@@ -3,6 +3,44 @@
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+    <title>Rhoman₵er's (Row-Man-Sir) Blog Feed</title>
+    <link>https://rhomancer.github.io/angus-blog-content</link>
+    <description>It's worth what you paid for it, in taxes or otherwise</description>
+    <atom:link href="https://rhomancer.github.io/angus-blog-content/rss.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Sun, 10 Aug 2025 18:46:00 GMT</lastBuildDate>
+    <item><title>How I found and lost a love for music</title><link>https://rhomancer.github.io/angus-blog-content/lost-music</link><guid isPermaLink="false">lost-music</guid><pubDate>Sun, 10 Aug 2025 18:46:00 GMT</pubDate><description><![CDATA[I played the drums and guitar when I was younger. For me, it's been years since I played both.]]></description><category>intro</category><category>music</category><category>depression</category><content:encoded><![CDATA[<h1>How I found and lost a love for music</h1>
+<p>I played the drums and guitar when I was younger. For me, it’s been years since I played both. In elementary school I
+played trombone and I sang, but eventually those lost their appeal. It wasn’t until the games Guitar Hero &amp; Rock Band
+did I really get into the hype of playing. Rock music had a much richer history than the grunge and alternative I was
+raised on, and was suddenly obsessed with playing real guitar and drum whenever I could.</p>
+<p>Rock Band was the real launching off for me. In 2007, I didn’t have a Facebook, MySpace, or a cell phone, but I did have
+a PS3. How do kids these days get into hobbies? Do they see something on their TikTok and decide, “that’s cool; that’s
+for me” or do they just keep scrolling? Rock Band and Guitar Hero were there for me, a kid who considered himself
+artistically talentless, as an inlet for creative exploration.</p>
+<p>On real rock instruments, I got my start on drums playing on my buddy Rob from middle schools’ set. There was a heatwave
+one summer, and I spent 3 nights at his house as we beat all of Guitar Hero 3 co-op. It was the days. Over the following
+month, I transferred my skills from Rock Band drums to real drums, practicing when we could. Rob and I recruited some
+other dudes from school to play with us, and our ninth graders’ first rock band was born. I was the singer, we
+covered Green Day, Weezer; and I’ll admit I was hooked to the amount of attention I was getting.</p>
+<p>I joined more bands, recorded albums and EPs, studied Music Theory in college, was the lead of the chorale and the
+school musical (granted, my school was tiny), and made lots of friends and connections. Then, one day, a tipping
+point happened: and from then on it was all about how I will make an income, go to college, have a career, save for
+retirement, stay current in my field, not get fired, and get promoted; Music in my life died a brief and unironically
+quiet death. I tried to hang onto guitar skills through college, but beyond drunken singalongs and convincing a girl
+I was not a total stick in the mud, it was pointless. I tried again during the pandemic but never got the hook to
+stick to it. As always, my speed of improvement was dishearteningly slow, and other priorities got in the way. As for
+drums, I haven’t given any an honest play in 15 years.</p>
+<p>Now, the guitar sitting in the corner stays dusty, unplayed, and perhaps even sadder than I am about its state. “I gave
+Music up for my survival, my future,” I tell myself, half believing it, a tear in my eye, and coping in my words. The
+silence and absence are still real, but not every passion can survive adulthood. Maybe the reality is that I never
+really
+had anything worth pursuing and was doomed to be let down from the start. Perhaps what I thought was improvement and
+impression was all just stage lights and amp feedback pushing adrenaline and dopamine.</p>
+<p>…but ultimately, I am grateful that I could be inspired. This gratitude did not come easy, but because I had to look
+for it. I’m grateful that some campy video games with crude facsimiles of music instruments could make me fall in love
+with so many sounds, histories, and cultures. I’ll probably never be satisfied with this part of my personal history,
+but I can’t deny that love I’ve had since I first started learning. That is the romantic part of my personal musical
+tragedy: that it existed, at all, in the context of everything else.</p>
     <title>&lt;FEED_TITLE&gt;</title>
     <link>https://&lt;GITHUB_USERNAME&gt;.github.io/&lt;REPO_NAME&gt;</link>
     <description>Updates and articles from &lt;FEED_TITLE&gt;</description>

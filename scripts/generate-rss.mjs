@@ -48,14 +48,15 @@ function pageTemplate({ title, htmlBody, excerpt, canonical, rssUrl, date, tags 
   ${published ? `<meta property="article:published_time" content="${published}"/>` : ""}
   ${Array.isArray(tags) ? tags.map(t => `<meta property="article:tag" content="${esc(t)}"/>`).join("\n  ") : ""}
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:#fff;color:#222}
+    :root{color-scheme:light dark}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:Canvas;color:CanvasText}
     header,main,footer{max-width:720px;margin:0 auto;padding:16px}
-    header{border-bottom:1px solid #eee}
-    footer{border-top:1px solid #eee;color:#666}
+    header{border-bottom:1px solid color-mix(in srgb, CanvasText 15%, Canvas)}
+    footer{border-top:1px solid color-mix(in srgb, CanvasText 15%, Canvas);color:GrayText}
     article :is(h1,h2,h3){line-height:1.25}
-    pre{background:#f6f8fa;padding:12px;overflow:auto}
+    pre{background:color-mix(in srgb, Canvas 92%, CanvasText);padding:12px;overflow:auto}
     code{font-family:ui-monospace,Menlo,Consolas,monospace}
-    a{color:#0b5fff;text-decoration:none}
+    a{color:LinkText;text-decoration:none}
     a:hover{text-decoration:underline}
   </style>
 </head>
@@ -87,12 +88,13 @@ function indexTemplate(posts) {
   <meta name="description" content="${esc(CHANNEL_DESC)}"/>
   <link rel="alternate" type="application/rss+xml" title="${esc(FEED_TITLE)}" href="${rssUrl}"/>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:#fff;color:#222}
+    :root{color-scheme:light dark}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:transparent;color:CanvasText}
     main{max-width:720px;margin:0 auto;padding:16px}
     li{margin:8px 0}
-    a{color:#0b5fff;text-decoration:none}
+    a{color:LinkText;text-decoration:none}
     a:hover{text-decoration:underline}
-    time{color:#666;font-size:.9em}
+    time{color:GrayText;font-size:.9em}
   </style>
 </head>
 <body>

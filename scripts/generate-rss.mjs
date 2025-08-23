@@ -168,7 +168,7 @@ async function master() {
   const selfHref = `${SITE_BASE_URL}/rss.xml`;
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="/rss.xsl" type="text/xsl"?>
+<?xml-stylesheet href="rss.xsl" type="text/xsl"?>
 <rss version="2.0"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:atom="http://www.w3.org/2005/Atom">

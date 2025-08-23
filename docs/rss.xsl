@@ -12,22 +12,37 @@
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="/assets/styles.css"/>
+        <style>
+          :root{color-scheme:light dark}
+          body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:Canvas;color:CanvasText}
+          main{max-width:720px;margin:0 auto;padding:16px}
+          h1{display:flex;align-items:flex-start;line-height:1.25;margin:0 0 16px 0}
+          h2{line-height:1.25;margin:24px 0 8px 0}
+          p{margin:8px 0}
+          a{color:LinkText;text-decoration:none}
+          a:hover{text-decoration:underline}
+          .alert-box{background:color-mix(in srgb, Canvas 85%, LinkText);border:1px solid color-mix(in srgb, CanvasText 25%, Canvas);border-radius:4px;padding:16px;margin:16px 0}
+          .rss-icon{flex-shrink:0;width:1em;height:1em;margin-right:12px}
+          .post{margin:24px 0;padding:16px 0;border-bottom:1px solid color-mix(in srgb, CanvasText 15%, Canvas)}
+          .post:last-child{border-bottom:none}
+          .date{color:GrayText;font-size:0.9em;margin-bottom:8px}
+          .post-title{font-weight:bold;font-size:1.1em;margin-bottom:8px}
+          .post-description{color:CanvasText;line-height:1.5}
+        </style>
       </head>
       <body>
-        <main class="layout-content">
-          <dk-alert-box type="info">
+        <main>
+          <div class="alert-box">
             <strong>This is an RSS feed</strong>. Subscribe by copying
             the URL from the address bar into your newsreader. Visit <a
             href="https://aboutfeeds.com">About Feeds
           </a> to learn more and get started. It’s free.
-          </dk-alert-box>
-          <div class="py-7">
-            <h1 class="flex items-start">
+          </div>
+          <div>
+            <h1>
               <!-- https://commons.wikimedia.org/wiki/File:Feed-icon.svg -->
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-                   class="mr-5"
-                   style="flex-shrink: 0; width: 1em; height: 1em;"
+                   class="rss-icon"
                    viewBox="0 0 256 256">
                 <defs>
                   <linearGradient x1="0.085" y1="0.085" x2="0.915" y2="0.915"
@@ -57,7 +72,9 @@
               </svg>
               RSS Feed Preview
             </h1>
-            <h2>rhomancer.github.io/angus-blog-content</h2>
+            <h2>
+              <xsl:value-of select="/rss/channel/title"/>
+            </h2>
             <p>
               <xsl:value-of select="/rss/channel/description"/>
             </p>
@@ -69,23 +86,23 @@
             </a>
 
             <h2>Recent blog posts</h2>
-            <xsl:for-each select="/atom:feed/atom:entry">
-              <div class="pb-7">
-                <div class="text-2 text-offset">
+            <xsl:for-each select="/rss/channel/item">
+              <div class="post">
+                <div class="date">
                   Published on
-                  <xsl:value-of select="substring(atom:published, 0, 11)" />
+                  <xsl:value-of select="substring(pubDate, 1, 16)" />
                 </div>
 
-                <div class="text-4 font-bold">
+                <div class="post-title">
                   <a>
                     <xsl:attribute name="href">
-                      <xsl:value-of select="atom:link/@href"/>
+                      <xsl:value-of select="link"/>
                     </xsl:attribute>
-                    <xsl:value-of select="atom:title"/>
+                    <xsl:value-of select="title"/>
                   </a>
                 </div>
 
-                <div class="text-3"><xsl:value-of select="atom:summary"/></div>
+                <div class="post-description"><xsl:value-of select="description"/></div>
               </div>
             </xsl:for-each>
           </div>

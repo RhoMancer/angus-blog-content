@@ -7,7 +7,7 @@
       <head>
         <title>
           RSS Feed |
-          <xsl:value-of select="/atom:feed/atom:title"/>
+          <xsl:value-of select="/rss/channel/title"/>
         </title>
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
@@ -57,13 +57,13 @@
               </svg>
               RSS Feed Preview
             </h1>
-            <h2>darekkay.com</h2>
+            <h2>rhomancer.github.io/angus-blog-content</h2>
             <p>
-              <xsl:value-of select="/atom:feed/atom:subtitle"/>
+              <xsl:value-of select="/rss/channel/description"/>
             </p>
             <a>
               <xsl:attribute name="href">
-                <xsl:value-of select="/atom:feed/atom:link[2]/@href"/>
+                <xsl:value-of select="/rss/channel/link"/>
               </xsl:attribute>
               Visit Website &#x2192;
             </a>

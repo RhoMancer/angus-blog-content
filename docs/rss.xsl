@@ -19,9 +19,9 @@
           h1{display:flex;align-items:flex-start;line-height:1.25;margin:0 0 16px 0}
           h2{line-height:1.25;margin:24px 0 8px 0}
           p{margin:8px 0}
-          a{color:LinkText;text-decoration:none}
+          a{color:light-dark(#0066cc, #66b3ff);text-decoration:none}
           a:hover{text-decoration:underline}
-          .alert-box{background:color-mix(in srgb, Canvas 85%, LinkText);border:1px solid color-mix(in srgb, CanvasText 25%, Canvas);border-radius:4px;padding:16px;margin:16px 0}
+          .alert-box{background:color-mix(in srgb, Canvas 85%, light-dark(#0066cc, #66b3ff));border:1px solid color-mix(in srgb, CanvasText 25%, Canvas);border-radius:4px;padding:16px;margin:16px 0}
           .rss-icon{flex-shrink:0;width:1em;height:1em;margin-right:12px}
           .post{margin:24px 0;padding:16px 0;border-bottom:1px solid color-mix(in srgb, CanvasText 15%, Canvas)}
           .post:last-child{border-bottom:none}

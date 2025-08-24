@@ -56,7 +56,7 @@ function pageTemplate({ title, htmlBody, excerpt, canonical, rssUrl, date, tags 
     article :is(h1,h2,h3){line-height:1.25}
     pre{background:color-mix(in srgb, Canvas 92%, CanvasText);padding:12px;overflow:auto}
     code{font-family:ui-monospace,Menlo,Consolas,monospace}
-    a{color:LinkText;text-decoration:none}
+    a{color:light-dark(#0066cc, #66b3ff);text-decoration:none}
     a:hover{text-decoration:underline}
   </style>
 </head>
@@ -92,7 +92,7 @@ function indexTemplate(posts) {
     body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:transparent;color:CanvasText}
     main{max-width:720px;margin:0 auto;padding:16px}
     li{margin:8px 0}
-    a{color:LinkText;text-decoration:none}
+    a{color:light-dark(#0066cc, #66b3ff);text-decoration:none}
     a:hover{text-decoration:underline}
     time{color:GrayText;font-size:.9em}
   </style>

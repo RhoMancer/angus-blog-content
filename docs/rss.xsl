@@ -12,6 +12,9 @@
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&amp;family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
         <style>
 :root {
   /* Light mode (your Material tokens -> simple semantics) */
@@ -71,10 +74,10 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
   border-left: .4rem solid var(--error); padding: .75rem 1rem; border-radius: .5rem;
 }
 
-          body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;}
+          body{font-family:'Nunito', sans-serif;line-height:1.6;margin:0;padding:0;}
           main{max-width:720px;margin:0 auto;padding:16px}
-          h1{display:flex;align-items:flex-start;line-height:1.25;margin:0 0 16px 0}
-          h2{line-height:1.25;margin:24px 0 8px 0}
+          h1{font-family:'Merriweather', serif;display:flex;align-items:flex-start;line-height:1.25;margin:0 0 16px 0}
+          h2{font-family:'Merriweather', serif;line-height:1.25;margin:24px 0 8px 0}
           p{margin:8px 0}
           .alert-box{background:var(--accent-weak);color:var(--on-weak);border:1px solid var(--border);border-radius:4px;padding:16px;margin:16px 0}
           .rss-icon{flex-shrink:0;width:1em;height:1em;margin-right:12px}

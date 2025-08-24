@@ -41,6 +41,9 @@ function pageTemplate({ title, htmlBody, excerpt, canonical, rssUrl, date, tags 
   <meta name="description" content="${desc}"/>
   <link rel="canonical" href="${canonical}"/>
   <link rel="alternate" type="application/rss+xml" title="${esc(FEED_TITLE)}" href="${rssUrl}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
   <meta property="og:type" content="article"/>
   <meta property="og:title" content="${safeTitle}"/>
   <meta property="og:description" content="${og}"/>
@@ -106,11 +109,11 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
   border-left: .4rem solid var(--error); padding: .75rem 1rem; border-radius: .5rem;
 }
 
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;}
+    body{font-family:'Nunito', sans-serif;line-height:1.6;margin:0;padding:0;}
     header,main,footer{max-width:720px;margin:0 auto;padding:16px}
     header{border-bottom:1px solid var(--border)}
     footer{border-top:1px solid var(--border);color:var(--text)}
-    article :is(h1,h2,h3){line-height:1.25}
+    article :is(h1,h2,h3){font-family:'Merriweather', serif;line-height:1.25}
     pre{background:var(--accent-weak);color:var(--on-weak);padding:12px;overflow:auto}
     code{font-family:ui-monospace,Menlo,Consolas,monospace}
   </style>
@@ -142,6 +145,9 @@ function indexTemplate(posts) {
   <title>${esc(FEED_TITLE)}</title>
   <meta name="description" content="${esc(CHANNEL_DESC)}"/>
   <link rel="alternate" type="application/rss+xml" title="${esc(FEED_TITLE)}" href="${rssUrl}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
 :root {
   /* Light mode (your Material tokens -> simple semantics) */
@@ -201,7 +207,8 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
   border-left: .4rem solid var(--error); padding: .75rem 1rem; border-radius: .5rem;
 }
 
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;}
+    body{font-family:'Nunito', sans-serif;line-height:1.6;margin:0;padding:0;}
+    h1{font-family:'Merriweather', serif;}
     main{max-width:720px;margin:0 auto;padding:16px}
     li{margin:8px 0}
     time{color:var(--text);font-size:.9em}

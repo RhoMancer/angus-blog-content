@@ -12,23 +12,7 @@
         <meta charset="utf-8"/>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <style>
-          :root{color-scheme:light dark}
-          body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:Canvas;color:CanvasText}
-          main{max-width:720px;margin:0 auto;padding:16px}
-          h1{display:flex;align-items:flex-start;line-height:1.25;margin:0 0 16px 0}
-          h2{line-height:1.25;margin:24px 0 8px 0}
-          p{margin:8px 0}
-          a{color:light-dark(#0066cc, #66b3ff);text-decoration:none}
-          a:hover{text-decoration:underline}
-          .alert-box{background:color-mix(in srgb, Canvas 85%, light-dark(#0066cc, #66b3ff));border:1px solid color-mix(in srgb, CanvasText 25%, Canvas);border-radius:4px;padding:16px;margin:16px 0}
-          .rss-icon{flex-shrink:0;width:1em;height:1em;margin-right:12px}
-          .post{margin:24px 0;padding:16px 0;border-bottom:1px solid color-mix(in srgb, CanvasText 15%, Canvas)}
-          .post:last-child{border-bottom:none}
-          .date{color:GrayText;font-size:0.9em;margin-bottom:8px}
-          .post-title{font-weight:bold;font-size:1.1em;margin-bottom:8px}
-          .post-description{color:CanvasText;line-height:1.5}
-        </style>
+        <link rel="stylesheet" href="css/rss-styles.css"/>
       </head>
       <body>
         <main>

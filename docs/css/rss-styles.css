@@ -1,0 +1,140 @@
+/* Import Material Design theme files */
+@import url('./light.css');
+@import url('./light-mc.css');
+@import url('./light-hc.css');
+@import url('./dark.css');
+@import url('./dark-mc.css');
+@import url('./dark-hc.css');
+
+/* Base styles using Material Design system */
+:root {
+  color-scheme: light dark;
+}
+
+/* Apply light theme by default */
+:root {
+  --current-primary: var(--md-sys-color-primary);
+  --current-on-primary: var(--md-sys-color-on-primary);
+  --current-surface: var(--md-sys-color-surface);
+  --current-on-surface: var(--md-sys-color-on-surface);
+  --current-background: var(--md-sys-color-background);
+  --current-on-background: var(--md-sys-color-on-background);
+  --current-outline: var(--md-sys-color-outline);
+  --current-outline-variant: var(--md-sys-color-outline-variant);
+  --current-surface-container: var(--md-sys-color-surface-container);
+  --current-surface-container-high: var(--md-sys-color-surface-container-high);
+  --current-primary-container: var(--md-sys-color-primary-container);
+  --current-on-primary-container: var(--md-sys-color-on-primary-container);
+}
+
+/* Dark theme media query */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
+/* Body and typography */
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: var(--current-background, var(--md-sys-color-background));
+  color: var(--current-on-background, var(--md-sys-color-on-background));
+}
+
+/* Main container */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+  background: var(--current-surface, var(--md-sys-color-surface));
+  color: var(--current-on-surface, var(--md-sys-color-on-surface));
+}
+
+/* Headings */
+h1 {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+  color: var(--current-primary, var(--md-sys-color-primary));
+}
+
+h2 {
+  line-height: 1.25;
+  margin: 24px 0 8px 0;
+  color: var(--current-primary, var(--md-sys-color-primary));
+}
+
+/* Paragraphs */
+p {
+  margin: 8px 0;
+  color: var(--current-on-surface, var(--md-sys-color-on-surface));
+}
+
+/* Links */
+a {
+  color: var(--current-primary, var(--md-sys-color-primary));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Alert box for RSS info */
+.alert-box {
+  background: var(--current-surface-container-high, var(--md-sys-color-surface-container-high));
+  border: 1px solid var(--current-outline-variant, var(--md-sys-color-outline-variant));
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  color: var(--current-on-surface, var(--md-sys-color-on-surface));
+}
+
+/* RSS icon styling */
+.rss-icon {
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  margin-right: 12px;
+}
+
+/* Post styling */
+.post {
+  margin: 24px 0;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--current-outline-variant, var(--md-sys-color-outline-variant));
+}
+
+.post:last-child {
+  border-bottom: none;
+}
+
+/* Date styling */
+.date {
+  color: var(--current-outline, var(--md-sys-color-outline));
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+/* Post title styling */
+.post-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.post-title a {
+  color: var(--current-primary, var(--md-sys-color-primary));
+}
+
+/* Post description styling */
+.post-description {
+  color: var(--current-on-surface, var(--md-sys-color-on-surface));
+  line-height: 1.5;
+}

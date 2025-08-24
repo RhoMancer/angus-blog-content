@@ -78,14 +78,14 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
           main{max-width:720px;margin:0 auto;padding:16px}
           h1{font-family:'Merriweather', serif;display:flex;align-items:flex-start;line-height:1.25;margin:0 0 16px 0}
           h2{font-family:'Merriweather', serif;line-height:1.25;margin:24px 0 8px 0}
-          p{margin:8px 0}
-          .alert-box{background:var(--accent-weak);color:var(--on-weak);border:1px solid var(--border);border-radius:4px;padding:16px;margin:16px 0}
+          p{font-family:'Merriweather', serif;font-size:1.05em;margin:8px 0}
+          .alert-box{font-family:'Merriweather', serif;background:var(--accent-weak);color:var(--on-weak);border:1px solid var(--border);border-radius:4px;padding:16px;margin:16px 0}
           .rss-icon{flex-shrink:0;width:1em;height:1em;margin-right:12px}
           .post{margin:24px 0;padding:16px 0;border-bottom:1px solid var(--border)}
           .post:last-child{border-bottom:none}
           .date{color:var(--text);font-size:0.9em;margin-bottom:8px}
-          .post-title{font-weight:bold;font-size:1.1em;margin-bottom:8px}
-          .post-description{color:var(--text);line-height:1.5}
+          .post-title{font-family:'Merriweather', serif;font-weight:bold;font-size:1.2em;margin-bottom:8px}
+          .post-description{font-family:'Merriweather', serif;color:var(--text);font-size:1.05em;line-height:1.5}
         </style>
       </head>
       <body>

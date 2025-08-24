@@ -48,16 +48,71 @@ function pageTemplate({ title, htmlBody, excerpt, canonical, rssUrl, date, tags 
   ${published ? `<meta property="article:published_time" content="${published}"/>` : ""}
   ${Array.isArray(tags) ? tags.map(t => `<meta property="article:tag" content="${esc(t)}"/>`).join("\n  ") : ""}
   <style>
-    :root{color-scheme:light dark}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:Canvas;color:CanvasText}
+:root {
+  /* Light mode (your Material tokens -> simple semantics) */
+  --bg:            #f5fafb;   /* surface */
+  --text:          #171d1e;   /* on surface */
+  --accent:        #006a6a;   /* primary */
+  --accent-weak:   #9cf1f0;   /* primary container */
+  --accent-2:      #006a6a;   /* secondary (same as primary per your input) */
+  --accent-2-weak: #9cf1f1;   /* secondary container */
+  --link:          #006a6a;   /* primary */
+  --link-hover:    #36618e;   /* tertiary */
+  --error:         #ba1a1a;   /* error */
+  --error-weak:    #ffdad6;   /* error container */
+  --card:          #ffffff;   /* simple card bg */
+  --on-accent:     #ffffff;   /* text on dark accent */
+  --on-weak:       #003233;   /* readable on light teal containers */
+  --on-card:       #171d1e;
+  --border:        #d2dee1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode */
+    --bg:            #0e1415;  /* surface */
+    --text:          #ffffff;  /* inferred on-surface */
+    --accent:        #80d5d4;  /* primary */
+    --accent-weak:   #004f50;  /* primary container */
+    --accent-2:      #80d4d5;  /* secondary */
+    --accent-2-weak: #004f50;  /* secondary container (same as primary container) */
+    --link:          #80d5d4;  /* primary */
+    --link-hover:    #a0cafd;  /* tertiary */
+    --error:         #ffb4ab;  /* error */
+    --error-weak:    #93000a;  /* error container */
+    --card:          #121a1b;
+    --on-accent:     #000000;  /* text on light accent */
+    --on-weak:       #d1f6f5;  /* readable on dark teal containers */
+    --on-card:       #ffffff;
+    --border:        #283436;
+  }
+}
+
+/* Minimal element defaults so "basic HTML" just works */
+html, body { background: var(--bg); color: var(--text); }
+a { color: var(--link); text-decoration: underline; }
+a:hover { color: var(--link-hover); }
+button {
+  background: var(--accent); color: var(--on-accent);
+  border: 1px solid transparent; padding: .6rem 1rem; border-radius: .5rem; cursor: pointer;
+}
+button.ghost { background: var(--accent-weak); color: var(--on-weak); }
+.card {
+  background: var(--card); color: var(--on-card);
+  border: 1px solid var(--border); border-radius: .75rem; padding: 1rem;
+}
+.alert-error {
+  background: var(--error-weak); color: #000;
+  border-left: .4rem solid var(--error); padding: .75rem 1rem; border-radius: .5rem;
+}
+
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;}
     header,main,footer{max-width:720px;margin:0 auto;padding:16px}
-    header{border-bottom:1px solid color-mix(in srgb, CanvasText 15%, Canvas)}
-    footer{border-top:1px solid color-mix(in srgb, CanvasText 15%, Canvas);color:GrayText}
+    header{border-bottom:1px solid var(--border)}
+    footer{border-top:1px solid var(--border);color:var(--text)}
     article :is(h1,h2,h3){line-height:1.25}
-    pre{background:color-mix(in srgb, Canvas 92%, CanvasText);padding:12px;overflow:auto}
+    pre{background:var(--accent-weak);color:var(--on-weak);padding:12px;overflow:auto}
     code{font-family:ui-monospace,Menlo,Consolas,monospace}
-    a{color:light-dark(#0066cc, #66b3ff);text-decoration:none}
-    a:hover{text-decoration:underline}
   </style>
 </head>
 <body>
@@ -88,13 +143,68 @@ function indexTemplate(posts) {
   <meta name="description" content="${esc(CHANNEL_DESC)}"/>
   <link rel="alternate" type="application/rss+xml" title="${esc(FEED_TITLE)}" href="${rssUrl}"/>
   <style>
-    :root{color-scheme:light dark}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:transparent;color:CanvasText}
+:root {
+  /* Light mode (your Material tokens -> simple semantics) */
+  --bg:            #f5fafb;   /* surface */
+  --text:          #171d1e;   /* on surface */
+  --accent:        #006a6a;   /* primary */
+  --accent-weak:   #9cf1f0;   /* primary container */
+  --accent-2:      #006a6a;   /* secondary (same as primary per your input) */
+  --accent-2-weak: #9cf1f1;   /* secondary container */
+  --link:          #006a6a;   /* primary */
+  --link-hover:    #36618e;   /* tertiary */
+  --error:         #ba1a1a;   /* error */
+  --error-weak:    #ffdad6;   /* error container */
+  --card:          #ffffff;   /* simple card bg */
+  --on-accent:     #ffffff;   /* text on dark accent */
+  --on-weak:       #003233;   /* readable on light teal containers */
+  --on-card:       #171d1e;
+  --border:        #d2dee1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode */
+    --bg:            #0e1415;  /* surface */
+    --text:          #ffffff;  /* inferred on-surface */
+    --accent:        #80d5d4;  /* primary */
+    --accent-weak:   #004f50;  /* primary container */
+    --accent-2:      #80d4d5;  /* secondary */
+    --accent-2-weak: #004f50;  /* secondary container (same as primary container) */
+    --link:          #80d5d4;  /* primary */
+    --link-hover:    #a0cafd;  /* tertiary */
+    --error:         #ffb4ab;  /* error */
+    --error-weak:    #93000a;  /* error container */
+    --card:          #121a1b;
+    --on-accent:     #000000;  /* text on light accent */
+    --on-weak:       #d1f6f5;  /* readable on dark teal containers */
+    --on-card:       #ffffff;
+    --border:        #283436;
+  }
+}
+
+/* Minimal element defaults so "basic HTML" just works */
+html, body { background: var(--bg); color: var(--text); }
+a { color: var(--link); text-decoration: underline; }
+a:hover { color: var(--link-hover); }
+button {
+  background: var(--accent); color: var(--on-accent);
+  border: 1px solid transparent; padding: .6rem 1rem; border-radius: .5rem; cursor: pointer;
+}
+button.ghost { background: var(--accent-weak); color: var(--on-weak); }
+.card {
+  background: var(--card); color: var(--on-card);
+  border: 1px solid var(--border); border-radius: .75rem; padding: 1rem;
+}
+.alert-error {
+  background: var(--error-weak); color: #000;
+  border-left: .4rem solid var(--error); padding: .75rem 1rem; border-radius: .5rem;
+}
+
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;}
     main{max-width:720px;margin:0 auto;padding:16px}
     li{margin:8px 0}
-    a{color:light-dark(#0066cc, #66b3ff);text-decoration:none}
-    a:hover{text-decoration:underline}
-    time{color:GrayText;font-size:.9em}
+    time{color:var(--text);font-size:.9em}
   </style>
 </head>
 <body>

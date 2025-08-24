@@ -13,21 +13,76 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <style>
-          :root{color-scheme:light dark}
-          body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;background:Canvas;color:CanvasText}
+:root {
+  /* Light mode (your Material tokens -> simple semantics) */
+  --bg:            #f5fafb;   /* surface */
+  --text:          #171d1e;   /* on surface */
+  --accent:        #006a6a;   /* primary */
+  --accent-weak:   #9cf1f0;   /* primary container */
+  --accent-2:      #006a6a;   /* secondary (same as primary per your input) */
+  --accent-2-weak: #9cf1f1;   /* secondary container */
+  --link:          #006a6a;   /* primary */
+  --link-hover:    #36618e;   /* tertiary */
+  --error:         #ba1a1a;   /* error */
+  --error-weak:    #ffdad6;   /* error container */
+  --card:          #ffffff;   /* simple card bg */
+  --on-accent:     #ffffff;   /* text on dark accent */
+  --on-weak:       #003233;   /* readable on light teal containers */
+  --on-card:       #171d1e;
+  --border:        #d2dee1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode */
+    --bg:            #0e1415;  /* surface */
+    --text:          #ffffff;  /* inferred on-surface */
+    --accent:        #80d5d4;  /* primary */
+    --accent-weak:   #004f50;  /* primary container */
+    --accent-2:      #80d4d5;  /* secondary */
+    --accent-2-weak: #004f50;  /* secondary container (same as primary container) */
+    --link:          #80d5d4;  /* primary */
+    --link-hover:    #a0cafd;  /* tertiary */
+    --error:         #ffb4ab;  /* error */
+    --error-weak:    #93000a;  /* error container */
+    --card:          #121a1b;
+    --on-accent:     #000000;  /* text on light accent */
+    --on-weak:       #d1f6f5;  /* readable on dark teal containers */
+    --on-card:       #ffffff;
+    --border:        #283436;
+  }
+}
+
+/* Minimal element defaults so "basic HTML" just works */
+html, body { background: var(--bg); color: var(--text); }
+a { color: var(--link); text-decoration: underline; }
+a:hover { color: var(--link-hover); }
+button {
+  background: var(--accent); color: var(--on-accent);
+  border: 1px solid transparent; padding: .6rem 1rem; border-radius: .5rem; cursor: pointer;
+}
+button.ghost { background: var(--accent-weak); color: var(--on-weak); }
+.card {
+  background: var(--card); color: var(--on-card);
+  border: 1px solid var(--border); border-radius: .75rem; padding: 1rem;
+}
+.alert-error {
+  background: var(--error-weak); color: #000;
+  border-left: .4rem solid var(--error); padding: .75rem 1rem; border-radius: .5rem;
+}
+
+          body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6;margin:0;padding:0;}
           main{max-width:720px;margin:0 auto;padding:16px}
           h1{display:flex;align-items:flex-start;line-height:1.25;margin:0 0 16px 0}
           h2{line-height:1.25;margin:24px 0 8px 0}
           p{margin:8px 0}
-          a{color:light-dark(#0066cc, #66b3ff);text-decoration:none}
-          a:hover{text-decoration:underline}
-          .alert-box{background:color-mix(in srgb, Canvas 85%, light-dark(#0066cc, #66b3ff));border:1px solid color-mix(in srgb, CanvasText 25%, Canvas);border-radius:4px;padding:16px;margin:16px 0}
+          .alert-box{background:var(--accent-weak);color:var(--on-weak);border:1px solid var(--border);border-radius:4px;padding:16px;margin:16px 0}
           .rss-icon{flex-shrink:0;width:1em;height:1em;margin-right:12px}
-          .post{margin:24px 0;padding:16px 0;border-bottom:1px solid color-mix(in srgb, CanvasText 15%, Canvas)}
+          .post{margin:24px 0;padding:16px 0;border-bottom:1px solid var(--border)}
           .post:last-child{border-bottom:none}
-          .date{color:GrayText;font-size:0.9em;margin-bottom:8px}
+          .date{color:var(--text);font-size:0.9em;margin-bottom:8px}
           .post-title{font-weight:bold;font-size:1.1em;margin-bottom:8px}
-          .post-description{color:CanvasText;line-height:1.5}
+          .post-description{color:var(--text);line-height:1.5}
         </style>
       </head>
       <body>

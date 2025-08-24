@@ -37,6 +37,8 @@
             the URL from the address bar into your newsreader. Visit <a
             href="https://aboutfeeds.com">About Feeds
           </a> to learn more and get started. It’s free.
+          <br/>
+          <a href="https://darekkay.com/blog/rss-styling/">Learn how to style your own RSS.xml here</a>.
           </div>
           <div>
             <h1>

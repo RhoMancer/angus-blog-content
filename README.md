@@ -6,9 +6,9 @@ Markdown-based content, static post pages, and an RSS feed for the app blog.
   - `index.json` — list of posts and metadata
   - `posts/<slug>.md` — Markdown body per post
 - Generated output (served by GitHub Pages from `/docs`):
-  - `docs/rss.xml` — RSS 2.0 feed
-  - `docs/index.html` — simple blog index
-  - `docs/<slug>/index.html` — one page per post
+  - `docs/rss.xml` — RSS 2.0 feed with XSL styling for browser viewing
+  - `docs/index.html` — redirect page that forwards visitors to the RSS feed
+  - `docs/<slug>/index.html` — one HTML page per post
 
 ## Publish a new post (start to finish)
 
@@ -46,11 +46,11 @@ Markdown-based content, static post pages, and an RSS feed for the app blog.
 
 4) What CI will do automatically
 - The GitHub Actions job will install deps and run the generator, then update and commit:
-  - `docs/rss.xml` (the feed)
-  - `docs/<slug>/index.html` (the post page)
-  - `docs/index.html` (the list page)
+  - `docs/rss.xml` (the RSS feed)
+  - `docs/<slug>/index.html` (individual post pages)
+  - `docs/index.html` (redirect page to RSS feed)
 - With GitHub Pages serving from `/docs`, your readers will have:
-  - Index: `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/`
+  - Index: `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/` (redirects to RSS)
   - Post:  `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/<slug>/`
   - RSS:   `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/rss.xml`
 
@@ -67,9 +67,9 @@ Markdown-based content, static post pages, and an RSS feed for the app blog.
   - `npx http-server .\docs -p 8080`
   - or: `npx serve .\docs -p 8080`
 - Open:
-  - `http://127.0.0.1:8080/`
-  - `http://127.0.0.1:8080/<slug>/`
-  - `http://127.0.0.1:8080/rss.xml`
+  - `http://127.0.0.1:8080/` (will redirect to RSS feed)
+  - `http://127.0.0.1:8080/<slug>/` (individual post pages)
+  - `http://127.0.0.1:8080/rss.xml` (RSS feed with styled presentation)
 
 ## One-time setup checklist
 
@@ -99,7 +99,7 @@ Markdown-based content, static post pages, and an RSS feed for the app blog.
 
 - Dates should be ISO 8601 (UTC recommended).
 - Tags in `index.json` become `<category>` entries in the RSS feed.
-- Enable GitHub Pages for this repo (Settings → Pages → Source: Deploy from a branch → Branch: your default branch → Folder: `/docs`). The feed is at `/rss.xml` and posts at `/<slug>/`.
+- Enable GitHub Pages for this repo (Settings → Pages → Source: Deploy from a branch → Branch: your default branch → Folder: `/docs`). The RSS feed is at `/rss.xml`, posts at `/<slug>/`, and the index redirects to the RSS feed.
 
 ## Troubleshooting
 

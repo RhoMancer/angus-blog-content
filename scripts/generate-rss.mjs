@@ -307,10 +307,27 @@ async function master() {
   await fs.writeFile(RSS_OUTPUT, rss, "utf8");
   console.log(`Wrote ${RSS_OUTPUT}`);
 
-  // Index page
-  const indexHtml = indexTemplate(list);
-  await fs.writeFile(path.join(ROOT, DOCS_DIR, "index.html"), indexHtml, "utf8");
-  console.log(`Wrote ${path.join(DOCS_DIR, "index.html")}`);
+  // Index page - Redirect to RSS feed to avoid content duplication
+  const redirectHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>${esc(FEED_TITLE)}</title>
+    <meta name="description" content="${esc(CHANNEL_DESC)}">
+    <meta http-equiv="refresh" content="0;url=./rss.xml">
+    <script>window.location.href='./rss.xml';</script>
+    <link rel="canonical" href="${SITE_BASE_URL}/rss.xml">
+</head>
+<body>
+    <p>Redirecting to <a href="./rss.xml">RSS feed</a>...</p>
+    <noscript>
+        <p>Please <a href="./rss.xml">click here</a> if you are not redirected automatically.</p>
+    </noscript>
+</body>
+</html>`;
+
+  await fs.writeFile(path.join(ROOT, DOCS_DIR, "index.html"), redirectHtml, "utf8");
+  console.log(`Wrote redirect ${path.join(DOCS_DIR, "index.html")}`);
 }
 
 master().catch((e) => {

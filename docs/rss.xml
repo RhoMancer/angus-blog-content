@@ -4,12 +4,12 @@
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>&lt;FEED_TITLE&gt;</title>
-    <link>https://&lt;GITHUB_USERNAME&gt;.github.io/&lt;REPO_NAME&gt;</link>
-    <description>Updates and articles from &lt;FEED_TITLE&gt;</description>
-    <atom:link href="https://&lt;GITHUB_USERNAME&gt;.github.io/&lt;REPO_NAME&gt;/rss.xml" rel="self" type="application/rss+xml"/>
+    <title>Rhoman₵er's (Row-Man-Sir) Blog Feed</title>
+    <link>https://rhomancer.github.io/angus-blog-content</link>
+    <description>It's worth what you paid for it, in taxes or otherwise</description>
+    <atom:link href="https://rhomancer.github.io/angus-blog-content/rss.xml" rel="self" type="application/rss+xml"/>
     <lastBuildDate>Sun, 10 Aug 2025 18:46:00 GMT</lastBuildDate>
-    <item><title>How I found and lost a love for music</title><link>https://&lt;GITHUB_USERNAME&gt;.github.io/&lt;REPO_NAME&gt;/lost-music/</link><guid isPermaLink="false">lost-music</guid><pubDate>Sun, 10 Aug 2025 18:46:00 GMT</pubDate><description><![CDATA[I played the drums and guitar when I was younger. For me, it's been years since I played both.]]></description><category>intro</category><category>music</category><category>depression</category><content:encoded><![CDATA[<h1>How I found and lost a love for music</h1>
+    <item><title>How I found and lost a love for music</title><link>https://rhomancer.github.io/angus-blog-content/lost-music/</link><guid isPermaLink="false">lost-music</guid><pubDate>Sun, 10 Aug 2025 18:46:00 GMT</pubDate><description><![CDATA[I played the drums and guitar when I was younger. For me, it's been years since I played both.]]></description><category>intro</category><category>music</category><category>depression</category><content:encoded><![CDATA[<h1>How I found and lost a love for music</h1>
 <p>I played the drums and guitar when I was younger. For me, it’s been years since I played both. In elementary school I
 played trombone and I sang, but eventually those lost their appeal. It wasn’t until the games Guitar Hero &amp; Rock Band
 did I really get into the hype of playing. Rock music had a much richer history than the grunge and alternative I was

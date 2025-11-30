@@ -7,9 +7,12 @@ const md = new MarkdownIt({ html: false, linkify: true, typographer: true });
 
 // Configure via env or defaults
 const FEED_TITLE = process.env.FEED_TITLE ?? "<FEED_TITLE>";
-// SITE_BASE_URL is the public base where your feed and (optionally) HTML pages live.
+// RSS_BASE_URL is the public base where your feed and (optionally) HTML pages live.
 // For GitHub Pages from /docs on main: https://<GITHUB_USERNAME>.github.io/<REPO_NAME>
-const SITE_BASE_URL = (process.env.SITE_BASE_URL ?? "https://<GITHUB_USERNAME>.github.io/<REPO_NAME>").replace(/\/$/, "");
+const RSS_BASE_URL = (process.env.RSS_BASE_URL ?? "https://<GITHUB_USERNAME>.github.io/<REPO_NAME>").replace(/\/$/, "");
+// Prefer env var; if missing or blank, default to the production domain.
+const siteBaseEnv = (process.env.SITE_BASE_URL ?? "").trim();
+const SITE_BASE_URL = (siteBaseEnv || "https://angussoftware.com").replace(/\/$/, "");
 const RSS_OUTPUT = process.env.RSS_OUTPUT ?? "docs/rss.xml";
 const CHANNEL_DESC = process.env.FEED_DESC ?? "Updates and articles from <FEED_TITLE>";
 const DOCS_DIR = process.env.DOCS_DIR ?? "docs";
@@ -122,7 +125,7 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
 </head>
 <body>
   <header>
-    <a href="${SITE_BASE_URL}/" style="text-decoration:none;color:inherit"><strong>${esc(FEED_TITLE)}</strong></a>
+    <a href="${RSS_BASE_URL}/" style="text-decoration:none;color:inherit"><strong>${esc(FEED_TITLE)}</strong></a>
     <span style="float:right"><a href="${rssUrl}">RSS</a></span>
   </header>
   <main>
@@ -138,7 +141,7 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
 }
 
 function indexTemplate(posts) {
-  const rssUrl = `${SITE_BASE_URL}/rss.xml`;
+  const rssUrl = `${RSS_BASE_URL}/rss.xml`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -223,7 +226,7 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
     <h1>${esc(FEED_TITLE)}</h1>
     <p>${esc(CHANNEL_DESC)}</p>
     <ul>
-      ${posts.map(p => `<li><a href="${SITE_BASE_URL}/${encodeURIComponent(p.slug)}/">${esc(p.title || p.slug)}</a> · <time datetime="${esc(p.date)}">${new Date(p.date).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: '2-digit' })}</time></li>`).join("\n      ")}
+      ${posts.map(p => `<li><a href="${RSS_BASE_URL}/${encodeURIComponent(p.slug)}/">${esc(p.title || p.slug)}</a> · <time datetime="${esc(p.date)}">${new Date(p.date).toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: '2-digit' })}</time></li>`).join("\n      ")}
     </ul>
     <p><a href="${rssUrl}">Subscribe via RSS</a></p>
   </main>
@@ -251,7 +254,7 @@ async function master() {
 
     const mdBody = await fs.readFile(mdPath, "utf8");
     const htmlBody = md.render(mdBody);
-    const permalink = `${SITE_BASE_URL}/${encodeURIComponent(slug)}/`;
+    const permalink = `${RSS_BASE_URL}/${encodeURIComponent(slug)}/`;
 
     // RSS item
     const tagXml = tags.map(t => `<category>${esc(t)}</category>`).join("");
@@ -277,7 +280,7 @@ async function master() {
       htmlBody,
       excerpt,
       canonical: permalink,
-      rssUrl: `${SITE_BASE_URL}/rss.xml`,
+      rssUrl: `${RSS_BASE_URL}/rss.xml`,
       date,
       tags
     });
@@ -286,7 +289,7 @@ async function master() {
 
   // RSS feed
   const lastBuild = list[0]?.date ? rfc822(list[0].date) : new Date().toUTCString();
-  const selfHref = `${SITE_BASE_URL}/rss.xml`;
+  const selfHref = `${RSS_BASE_URL}/rss.xml`;
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="rss.xsl" type="text/xsl"?>
@@ -295,7 +298,7 @@ async function master() {
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>${esc(FEED_TITLE)}</title>
-    <link>${esc(SITE_BASE_URL)}</link>
+    <link>${esc(RSS_BASE_URL)}</link>
     <description>${esc(CHANNEL_DESC)}</description>
     <atom:link href="${esc(selfHref)}" rel="self" type="application/rss+xml"/>
     <lastBuildDate>${lastBuild}</lastBuildDate>
@@ -316,7 +319,7 @@ async function master() {
     <meta name="description" content="${esc(CHANNEL_DESC)}">
     <meta http-equiv="refresh" content="0;url=./rss.xml">
     <script>window.location.href='./rss.xml';</script>
-    <link rel="canonical" href="${SITE_BASE_URL}/rss.xml">
+    <link rel="canonical" href="${RSS_BASE_URL}/rss.xml">
 </head>
 <body>
     <p>Redirecting to <a href="./rss.xml">RSS feed</a>...</p>

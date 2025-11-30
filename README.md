@@ -61,7 +61,8 @@ Markdown-based content, static post pages, and an RSS feed for the app blog.
   - PowerShell:
     - `$env:FEED_TITLE = "My Blog"`
     - `$env:FEED_DESC = "Updates and articles from My Blog"`
-    - `$env:SITE_BASE_URL = "http://127.0.0.1:8080"`
+    - `$env:BASE_STIE_URL = test url`
+    - `$env:RSS_BASE_URL = "http://127.0.0.1:8080"`
 - Build: `npm run build:rss`
 - Serve `docs/` locally (pick one):
   - `npx http-server .\docs -p 8080`
@@ -79,7 +80,8 @@ Markdown-based content, static post pages, and an RSS feed for the app blog.
 - GitHub Actions → Secrets and variables → Actions → Variables:
   - `FEED_TITLE` (e.g., `My Blog`)
   - `FEED_DESC` (e.g., `Updates and articles from My Blog`)
-  - `SITE_BASE_URL` (exactly `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>` with no trailing slash)
+  - `SITE_BASE_URL` (Personal domain, e.g., `https://angussoftware.com`)
+  - `RSS_BASE_URL` (exactly `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>` with no trailing slash)
   - `RSS_OUTPUT` (optional; defaults to `docs/rss.xml`)
 - Workflow branch filter:
   - Current workflow watches `main`. If your default branch differs, update `.github/workflows/rss.yml` accordingly.
@@ -110,6 +112,6 @@ Markdown-based content, static post pages, and an RSS feed for the app blog.
   - Make sure `docs/<slug>/index.html` exists and Pages serves from `/docs`.
   - RSS item links include a trailing slash (`/<slug>/`).
 - Placeholders (`<FEED_TITLE>`, `<GITHUB_USERNAME>`) on the live site:
-  - Set `FEED_TITLE`, `FEED_DESC`, and `SITE_BASE_URL` repository Variables.
+  - Set `FEED_TITLE`, `FEED_DESC`, `SITE_BASE_URL`  and `RSS_BASE_URL` repository Variables.
 - Wrong canonical/links:
-  - `SITE_BASE_URL` must be exactly `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>` (no trailing slash).
+  - `RSS_BASE_URL` must be exactly `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>` (no trailing slash).

@@ -36,6 +36,7 @@ jobs:
           FEED_TITLE: "${{ vars.FEED_TITLE }}"
           FEED_DESC: "${{ vars.FEED_DESC }}"
           SITE_BASE_URL: "${{ vars.SITE_BASE_URL }}"
+          RSS_BASE_URL: "${{ vars.RSS_BASE_URL }}"
           RSS_OUTPUT: "${{ vars.RSS_OUTPUT }}"
         run: npm run build:rss
 

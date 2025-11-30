@@ -138,10 +138,7 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
             <p>
               <xsl:value-of select="/rss/channel/description"/>
             </p>
-            <a>
-              <xsl:attribute name="href">
-                <xsl:value-of select="/rss/channel/link"/>
-              </xsl:attribute>
+            <a href="https://www.angussoftware.com/">
               Visit Website &#x2192;
             </a>
 

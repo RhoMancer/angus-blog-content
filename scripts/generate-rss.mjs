@@ -126,7 +126,7 @@ button.ghost { background: var(--accent-weak); color: var(--on-weak); }
 <body>
   <header>
     <a href="${RSS_BASE_URL}/" style="text-decoration:none;color:inherit"><strong>${esc(FEED_TITLE)}</strong></a>
-    <span style="float:right"><a href="${rssUrl}">RSS</a></span>
+    <span style="float:right"><a href="${SITE_BASE_URL}/">Home</a> • <a href="${rssUrl}">RSS</a></span>
   </header>
   <main>
     <article>

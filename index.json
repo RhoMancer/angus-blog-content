@@ -1,5 +1,13 @@
 [
   {
+    "slug": "from-xml-to-everywhere",
+    "title": "From XML to Everywhere: My First Kotlin Multiplatform Run",
+    "date": "2025-12-05T17:30:00Z",
+    "excerpt": "After 11 years of Android development and XML layouts, I built a portfolio app that runs on Android and the web using Kotlin Multiplatform and Compose.",
+    "coverImageUrl": null,
+    "tags": ["android", "kotlin", "kmp", "compose", "multiplatform", "ci-cd"]
+  },
+  {
     "slug": "lost-music",
     "title": "How I found and lost a love for music",
     "date": "2025-08-10T18:46:00Z",

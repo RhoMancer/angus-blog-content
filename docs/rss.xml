@@ -18,7 +18,7 @@
 <li>Kotlin Multiplatform (KMP) is clearly not going away</li>
 <li>I should ship something real, not another toy app rotting in a repo</li>
 </ul>
-<p>So I built a portfolio app that runs on Android and the web.</p>
+<p>So I built a <a href="https://angussoftware.com">portfolio app</a> that runs on Android and the web.</p>
 <p>It took about three and a half months of nights and weekends. It’s not some dribbble-perfect masterpiece, but it’s done, it works, and I’m proud of it.</p>
 <h2>Why I Picked Kotlin Multiplatform</h2>
 <p>Short version: I already live in Kotlin all day, so using KMP was the obvious move.</p>

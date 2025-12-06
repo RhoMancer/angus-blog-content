@@ -10,7 +10,7 @@ At some point I decided:
 - Kotlin Multiplatform (KMP) is clearly not going away
 - I should ship something real, not another toy app rotting in a repo
 
-So I built a portfolio app that runs on Android and the web.
+So I built a [portfolio app](https://angussoftware.com) that runs on Android and the web.
 
 It took about three and a half months of nights and weekends. It's not some dribbble-perfect masterpiece, but it's done, it works, and I'm proud of it.
 

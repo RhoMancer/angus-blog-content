@@ -1,15 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="rss.xsl" type="text/xsl"?>
-<rss version="2.0"
-     xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Rhoman₵er's (Row-Man-Sir) Blog Feed</title>
-    <link>https://rhomancer.github.io/angus-blog-content</link>
-    <description>It's worth what you paid for it, in taxes or otherwise</description>
-    <atom:link href="https://rhomancer.github.io/angus-blog-content/rss.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 05 Dec 2025 17:30:00 GMT</lastBuildDate>
-    <item><title>From XML to Everywhere: My First Kotlin Multiplatform Run</title><link>https://rhomancer.github.io/angus-blog-content/from-xml-to-everywhere/</link><guid isPermaLink="false">from-xml-to-everywhere</guid><pubDate>Fri, 05 Dec 2025 17:30:00 GMT</pubDate><description><![CDATA[After 11 years of Android development and XML layouts, I built a portfolio app that runs on Android and the web using Kotlin Multiplatform and Compose.]]></description><category>android</category><category>kotlin</category><category>kmp</category><category>compose</category><category>multiplatform</category><category>ci-cd</category><content:encoded><![CDATA[<h1>From XML to Everywhere: My First Kotlin Multiplatform Run</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>From XML to Everywhere: My First Kotlin Multiplatform Run</title>
+  <meta name="description" content="After 11 years of Android development and XML layouts, I built a portfolio app that runs on Android and the web using Kotlin Multiplatform and Compose."/>
+  <link rel="canonical" href="https://rhomancer.github.io/angus-blog-content/from-xml-to-everywhere/"/>
+  <link rel="alternate" type="application/rss+xml" title="Rhoman₵er's (Row-Man-Sir) Blog Feed" href="https://rhomancer.github.io/angus-blog-content/rss.xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="From XML to Everywhere: My First Kotlin Multiplatform Run"/>
+  <meta property="og:description" content="After 11 years of Android development and XML layouts, I built a portfolio app that runs on Android and the web using Kotlin Multiplatform and Compose."/>
+  <meta property="og:url" content="https://rhomancer.github.io/angus-blog-content/from-xml-to-everywhere/"/>
+  <meta property="article:published_time" content="2025-12-05T17:30:00.000Z"/>
+  <meta property="article:tag" content="android"/>
+  <meta property="article:tag" content="kotlin"/>
+  <meta property="article:tag" content="kmp"/>
+  <meta property="article:tag" content="compose"/>
+  <meta property="article:tag" content="multiplatform"/>
+  <meta property="article:tag" content="ci-cd"/>
+  <style>
+:root {
+  /* Light mode (your Material tokens -> simple semantics) */
+  --bg:            #f5fafb;   /* surface */
+  --text:          #171d1e;   /* on surface */
+  --accent:        #006a6a;   /* primary */
+  --accent-weak:   #9cf1f0;   /* primary container */
+  --accent-2:      #006a6a;   /* secondary (same as primary per your input) */
+  --accent-2-weak: #9cf1f1;   /* secondary container */
+  --link:          #006a6a;   /* primary */
+  --link-hover:    #36618e;   /* tertiary */
+  --error:         #ba1a1a;   /* error */
+  --error-weak:    #ffdad6;   /* error container */
+  --card:          #ffffff;   /* simple card bg */
+  --on-accent:     #ffffff;   /* text on dark accent */
+  --on-weak:       #003233;   /* readable on light teal containers */
+  --on-card:       #171d1e;
+  --border:        #d2dee1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode */
+    --bg:            #0e1415;  /* surface */
+    --text:          #ffffff;  /* inferred on-surface */
+    --accent:        #80d5d4;  /* primary */
+    --accent-weak:   #004f50;  /* primary container */
+    --accent-2:      #80d4d5;  /* secondary */
+    --accent-2-weak: #004f50;  /* secondary container (same as primary container) */
+    --link:          #80d5d4;  /* primary */
+    --link-hover:    #a0cafd;  /* tertiary */
+    --error:         #ffb4ab;  /* error */
+    --error-weak:    #93000a;  /* error container */
+    --card:          #121a1b;
+    --on-accent:     #000000;  /* text on light accent */
+    --on-weak:       #d1f6f5;  /* readable on dark teal containers */
+    --on-card:       #ffffff;
+    --border:        #283436;
+  }
+}
+
+/* Minimal element defaults so "basic HTML" just works */
+html, body { background: var(--bg); color: var(--text); }
+a { color: var(--link); text-decoration: underline; }
+a:hover { color: var(--link-hover); }
+button {
+  background: var(--accent); color: var(--on-accent);
+  border: 1px solid transparent; padding: .6rem 1rem; border-radius: .5rem; cursor: pointer;
+}
+button.ghost { background: var(--accent-weak); color: var(--on-weak); }
+.card {
+  background: var(--card); color: var(--on-card);
+  border: 1px solid var(--border); border-radius: .75rem; padding: 1rem;
+}
+.alert-error {
+  background: var(--error-weak); color: #000;
+  border-left: .4rem solid var(--error); padding: .75rem 1rem; border-radius: .5rem;
+}
+
+    body{font-family:'Nunito', sans-serif;line-height:1.6;margin:0;padding:0;}
+    header,main,footer{max-width:720px;margin:0 auto;padding:16px}
+    header{border-bottom:1px solid var(--border)}
+    header strong{font-family:'Merriweather', serif;}
+    footer{border-top:1px solid var(--border);color:var(--text)}
+    article :is(h1,h2,h3){font-family:'Merriweather', serif;line-height:1.25}
+    article p{font-family:'Merriweather', serif;font-size:1.05em;}
+    pre{background:var(--accent-weak);color:var(--on-weak);padding:12px;overflow:auto}
+    code{font-family:ui-monospace,Menlo,Consolas,monospace}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://rhomancer.github.io/angus-blog-content/" style="text-decoration:none;color:inherit"><strong>Rhoman₵er's (Row-Man-Sir) Blog Feed</strong></a>
+    <span style="float:right"><a href="https://angussoftware.com/">Home</a> • <a href="https://rhomancer.github.io/angus-blog-content/rss.xml">RSS</a></span>
+  </header>
+  <main>
+    <article>
+      <h1>From XML to Everywhere: My First Kotlin Multiplatform Run</h1>
 <p>For about 11 years I’ve been doing Android—9 of those professionally—and for almost that entire time my UI life was XML and old-school views.</p>
 <p>Meanwhile, my “portfolio site” was this ancient Kotlin/JS thing I hacked together in 2019 that really should’ve been deleted years ago.</p>
 <p>At some point I decided:</p>
@@ -150,40 +239,11 @@ I’ve got some Android games I’d like to drag into the modern world and make 
 </ul>
 <p>The app itself is simple: it shows who I am, what I’ve built, and pulls in my blog posts. But the real win was proving to myself that I could take a brand-new stack, stick with it long enough, and actually ship something real instead of abandoning it halfway like so many other side projects.</p>
 <p>That alone made it worth it.</p>
-]]></content:encoded></item>
-    <item><title>How I found and lost a love for music</title><link>https://rhomancer.github.io/angus-blog-content/lost-music/</link><guid isPermaLink="false">lost-music</guid><pubDate>Sun, 10 Aug 2025 18:46:00 GMT</pubDate><description><![CDATA[I played the drums and guitar when I was younger. For me, it's been years since I played both.]]></description><category>intro</category><category>music</category><category>depression</category><content:encoded><![CDATA[<h1>How I found and lost a love for music</h1>
-<p>I played the drums and guitar when I was younger. For me, it’s been years since I played both. In elementary school I
-played trombone and I sang, but eventually those lost their appeal. It wasn’t until the games Guitar Hero &amp; Rock Band
-did I really get into the hype of playing. Rock music had a much richer history than the grunge and alternative I was
-raised on, and was suddenly obsessed with playing real guitar and drum whenever I could.</p>
-<p>Rock Band was the real launching off for me. In 2007, I didn’t have a Facebook, MySpace, or a cell phone, but I did have
-a PS3. How do kids these days get into hobbies? Do they see something on their TikTok and decide, “that’s cool; that’s
-for me” or do they just keep scrolling? Rock Band and Guitar Hero were there for me, a kid who considered himself
-artistically talentless, as an inlet for creative exploration.</p>
-<p>On real rock instruments, I got my start on drums playing on my buddy Rob from middle schools’ set. There was a heatwave
-one summer, and I spent 3 nights at his house as we beat all of Guitar Hero 3 co-op. It was the days. Over the following
-month, I transferred my skills from Rock Band drums to real drums, practicing when we could. Rob and I recruited some
-other dudes from school to play with us, and our ninth graders’ first rock band was born. I was the singer, we
-covered Green Day, Weezer; and I’ll admit I was hooked to the amount of attention I was getting.</p>
-<p>I joined more bands, recorded albums and EPs, studied Music Theory in college, was the lead of the chorale and the
-school musical (granted, my school was tiny), and made lots of friends and connections. Then, one day, a tipping
-point happened: and from then on it was all about how I will make an income, go to college, have a career, save for
-retirement, stay current in my field, not get fired, and get promoted; Music in my life died a brief and unironically
-quiet death. I tried to hang onto guitar skills through college, but beyond drunken singalongs and convincing a girl
-I was not a total stick in the mud, it was pointless. I tried again during the pandemic but never got the hook to
-stick to it. As always, my speed of improvement was dishearteningly slow, and other priorities got in the way. As for
-drums, I haven’t given any an honest play in 15 years.</p>
-<p>Now, the guitar sitting in the corner stays dusty, unplayed, and perhaps even sadder than I am about its state. “I gave
-Music up for my survival, my future,” I tell myself, half believing it, a tear in my eye, and coping in my words. The
-silence and absence are still real, but not every passion can survive adulthood. Maybe the reality is that I never
-really
-had anything worth pursuing and was doomed to be let down from the start. Perhaps what I thought was improvement and
-impression was all just stage lights and amp feedback pushing adrenaline and dopamine.</p>
-<p>…but ultimately, I am grateful that I could be inspired. This gratitude did not come easy, but because I had to look
-for it. I’m grateful that some campy video games with crude facsimiles of music instruments could make me fall in love
-with so many sounds, histories, and cultures. I’ll probably never be satisfied with this part of my personal history,
-but I can’t deny that love I’ve had since I first started learning. That is the romantic part of my personal musical
-tragedy: that it existed, at all, in the context of everything else.</p>
-]]></content:encoded></item>
-  </channel>
-</rss>
+
+    </article>
+  </main>
+  <footer>
+    <small>© 2025 • <a href="https://angussoftware.com/">Home</a> • <a href="https://rhomancer.github.io/angus-blog-content/rss.xml">RSS</a></small>
+  </footer>
+</body>
+</html>
